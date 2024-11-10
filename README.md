@@ -70,7 +70,4 @@ The script generates visualizations to assess:
 - **Clarity of README**: This README provides a clear overview and usage guide, allowing users to quickly understand the purpose and operation of the solution.
 - **Simplicity and Code Cleanliness**: The solution uses lightweight NLP models, ensuring suitability for personal devices. Heuristic filtering and simple model-based approaches avoid the need for complex, resource-intensive language models.
 
----
-
-This README introduces your solution, highlights its simplicity, and offers a concise guide to the code’s purpose and usage, ensuring easy comprehension for your interviewer or any user. Let me know if you’d like more customization or additional information.
 
