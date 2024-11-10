@@ -1,93 +1,76 @@
-# SemanticFilter
+# Article Collection Filtering and Classification
 
-## Overview
-**SemanticFilter** is an NLP toolkit for filtering and classifying text documents based on semantic similarity. Using multiple models, this tool evaluates and categorizes documents, identifying those that meet a given similarity threshold.
+This project provides a solution to streamline the early-stage collection of scientific articles by filtering and classifying articles based on their relevance to specified research topics. The solution applies natural language processing (NLP) techniques to identify and categorize articles with relevant keywords, thus minimizing the manual effort in reviewing a large number of documents.
 
-This project is designed for applications in **semantic text filtering**, **document classification**, and **text preprocessing** for NLP tasks. 
+## Project Overview
 
-## Features
-- Supports multi-model similarity checks to validate results
-- Allows customizable similarity threshold and element percentage for filtering
-- Provides an easy-to-use API for integration into larger NLP pipelines
+This project aims to:
+1. **Filter Articles by Relevance**: Using heuristic and similarity-based approaches, this solution determines whether articles meet relevance criteria based on specific keywords in the fields of virology and epidemiology.
+2. **Classify Articles by Method**: For articles deemed relevant, the solution categorizes them according to the research methodology described in the abstract, specifically focusing on:
+    - Text Mining
+    - Computer Vision
+    - Both Text Mining and Computer Vision
+    - Other methods
 
-## Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Example](#example)
-4. [Project Structure](#project-structure)
-5. [Contributing](#contributing)
-6. [License](#license)
+## Key Features
 
-## Installation
-1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/YourUsername/TextSimilarityFilter.git
-    cd TextSimilarityFilter
-    ```
+1. **Preprocessing**: Includes tokenization, stopword removal, stemming, lemmatization, and special character removal.
+2. **Similarity-based Filtering**: Uses lightweight models (Sentence Transformer models) to calculate similarity scores between query terms and article abstracts, ensuring efficient operation on personal devices or free platforms.
+3. **Article Classification**: Based on the average similarity of each article to key terms, articles are classified into categories for easier analysis.
 
-2. **Install dependencies**:
-    This project relies on several libraries including `nltk`, `spacy`, and optionally, `transformers` for advanced models.
-    ```bash
-    pip install -r requirements.txt
-    ```
-3. **Download NLP Models**:
-   ```bash
-   python -m spacy download en_core_web_md
-   ```
+## Requirements
+
+The project relies on the following libraries:
+- `pandas`
+- `numpy`
+- `scikit-learn`
+- `matplotlib`
+- `seaborn`
+- `nltk`
+- `spacy`
+- `torch`
+- `sentence_transformers`
+
+Install the dependencies using:
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn nltk spacy torch sentence-transformers
+```
 
 ## Usage
-The main function in this package is `filter_text`, which classifies text based on similarity criteria. Adjust `percentage_elements` and `percentage_max_value` to set filtering parameters.
 
-### Sample Code
+1. **Data Loading and Processing**: Supply a CSV file containing article titles and abstracts. The script preprocesses the text data and merges the title and abstract into a single text column for analysis.
+2. **Keyword Filtering**: Customize the `query_terms` variable to adjust the keywords for relevance detection based on the research topic.
+3. **Method Classification**: Adjust thresholds in `assign_method_labels` if needed to refine classification into text mining, computer vision, both, or other methods.
+
+### Example
+
+To run the filtering and classification, use the `main()` function:
 ```python
-from TextSimilarityFilter import filtering
-from sentence_transformers import SentenceTransformer
-
-# Example inputs
-text = ["Document 1 content", "Document 2 content", ...]
-query = "Your reference query"
-
-# Load model
-model = SentenceTransformer("all-MiniLM-L6-v2")
-
-# Run filtering
-results = filtering(text, model, query, percentage_elements=10, percentage_max_value=80)
-print(results)
+file_path = "path_to_your_file.csv"
+processed_data = main(file_path)
+processed_data.to_csv("processed_data.csv", index=False)
 ```
 
-## Example
-Here's an example showing how `TextSimilarityFilter` can be used to filter documents in a Pandas DataFrame:
+After filtering, the solution visualizes and saves the output, providing insight into the distribution of relevant articles.
 
-```python
-import pandas as pd
-from TextSimilarityFilter import filtering
-from sentence_transformers import SentenceTransformer
+### Visualization
+The script generates visualizations to assess:
+1. The number of filtered articles
+2. Similarity distributions for text mining and computer vision methods
+3. Correlations between the similarity measures
 
-# Load your data
-data = pd.DataFrame({"documents": ["Text 1", "Text 2", ...]})
+## Code Structure
 
-# Define query and initialize model
-query = "Relevant topic for filtering"
-model = SentenceTransformer("all-MiniLM-L6-v2")
+- **Data Loading and Preprocessing**: `load_data`, `fill_na`, `merge_columns`, `preprocess_text`
+- **Filtering Functions**: `filter_text`, `polishing`
+- **Classification Functions**: `calculate_avg_similarity`, `assign_method_labels`
 
-# Apply filtering
-data["filtered"] = data["documents"].apply(lambda x: filtering(x, model, query, percentage_elements=10, percentage_max_value=80))
-```
+## Evaluation Criteria
 
-## Project Structure
-- **TextSimilarityFilter/**: Core modules
-  - **filtering.py**: Main filtering and similarity checking functions
-  - **utils.py**: Utility functions for text preprocessing
-- **tests/**: Test cases to validate functionality
-- **README.md**: Project overview and usage instructions
+- **Clarity of README**: This README provides a clear overview and usage guide, allowing users to quickly understand the purpose and operation of the solution.
+- **Simplicity and Code Cleanliness**: The solution uses lightweight NLP models, ensuring suitability for personal devices. Heuristic filtering and simple model-based approaches avoid the need for complex, resource-intensive language models.
 
-## Contributing
-Contributions are welcome! If you'd like to contribute:
-1. Fork this repository
-2. Create a new branch for your feature (`git checkout -b feature-name`)
-3. Make your changes
-4. Submit a pull request
+---
 
-## License
-This project is licensed under the MIT License.
+This README introduces your solution, highlights its simplicity, and offers a concise guide to the code’s purpose and usage, ensuring easy comprehension for your interviewer or any user. Let me know if you’d like more customization or additional information.
 
