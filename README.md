@@ -91,6 +91,3 @@ Contributions are welcome! If you'd like to contribute:
 ## License
 This project is licensed under the MIT License.
 
----
-
-This README format provides users with an easy way to understand, set up, and use your project. Make sure to update the instructions and descriptions to match your exact project details.
