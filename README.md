@@ -78,14 +78,6 @@ Traditional keyword-based filtering has its limitations in dealing with variatio
 - Extend the filtering model to include additional techniques such as **Named Entity Recognition (NER)** to identify specific neural network architectures or methods mentioned in the papers.
 - Integrate additional classification categories to cover other deep learning applications in virology and epidemiology.
 
-## Contributing
-Contributions are welcome! If you'd like to suggest improvements or add new features, please:
-1. Fork the repository.
-2. Create a new branch for your changes.
-3. Submit a pull request with a description of your changes.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact Information
 For questions or feedback, feel free to reach out to javahedi@gmail.com.
