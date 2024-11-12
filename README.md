@@ -63,7 +63,7 @@ This project includes a Jupyter notebook, `nlp-project.ipynb`, which contains al
     jupyter notebook nlp-project.ipynb
   ```
 
-4. *Run the Cells**:
+4. **Run the Cells**:
   - Follow the instructions within the notebook to load the dataset, apply the NLP filter, and classify the papers.
   - The notebook will guide you through the steps for extracting the deep learning methods used in each paper.
 
