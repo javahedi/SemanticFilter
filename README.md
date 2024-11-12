@@ -33,12 +33,12 @@ For each relevant paper, the specific deep learning method used (e.g., Convoluti
 
 ## Results
 
-- **Filtered Papers**: After applying the NLP filtering technique, we identified [7883] (out of 11,450) relevant papers from the dataset.
+- **Filtered Papers**: After applying the NLP filtering technique, we identified 7883 (out of 11,450) relevant papers from the dataset.
 - **Classification Breakdown**:
-  - Text Mining: [1910]
-  - Computer Vision: [1810]
-  - Both: [4096]
-  - Other: [67]
+  - Text Mining: 1910
+  - Computer Vision: 1810
+  - Both: 4096
+  - Other: 67
 
 
 ## Jupyter Notebook: `nlp-project.ipynb`
