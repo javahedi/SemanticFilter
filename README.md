@@ -41,43 +41,32 @@ For each relevant paper, the specific deep learning method used (e.g., Convoluti
   - Other: [X%]
 
 
-## Installation
+## Jupyter Notebook: `nlp-project.ipynb`
 
-1. **Clone the repository**:
-   ```bash
+This project includes a Jupyter notebook, `nlp-project.ipynb`, which contains all the necessary code for:
+- **Loading the dataset** and preprocessing it.
+- **Filtering papers** using semantic NLP techniques (BERT).
+- **Classifying papers** into one of the predefined categories.
+- **Extracting deep learning methods** used in each paper.
+
+### How to Run the Jupyter Notebook:
+1. **Clone the Repository:**
+ ```bash
    git clone https://github.com/username/projectname.git
-   ```
+  ```
+2. **Install Dependencies**: Install the required libraries using:
+  ```bash
+    pip install -r requirements.txt
+  ```
+3. **Launch Jupyter Notebook**: Open the notebook by running:
+  ```bash
+    jupyter notebook nlp-project.ipynb
+  ```
 
-2. **Install dependencies**:
-   The project requires Python 3.x and several libraries. You can install them using:
-   ```bash
-   pip install -r requirements.txt
-   ```
+4. *Run the Cells**:
+  - Follow the instructions within the notebook to load the dataset, apply the NLP filter, and classify the papers.
+  - The notebook will guide you through the steps for extracting the deep learning methods used in each paper.
 
-3. **Prepare the dataset**:
-   Download the dataset and place it in the `data/` directory.
-
-4. **Run the filtering and classification**:
-   After setting up, you can run the code using the following command:
-   ```bash
-   python filter_and_classify.py --dataset data/papers.csv --output results.csv
-   ```
-
-   This will filter and classify the papers, outputting the results into a CSV file.
-
-## Code Explanation
-
-### 1. **filter_and_classify.py**
-   - **Input**: A CSV file containing the academic papers dataset.
-   - **Processing**:
-     - Filters the papers using semantic NLP techniques.
-     - Classifies each paper based on the type of deep learning method used.
-     - Extracts the deep learning method (e.g., CNN, RNN).
-   - **Output**: A CSV file with classified papers and their corresponding methods.
-
-### 2. **nlp_filter.py**
-   - Implements the BERT-based semantic filtering.
-   - This script uses the pre-trained BERT model, fine-tuned for the domain-specific dataset to filter out irrelevant papers.
 
 ## Why NLP-based Filtering?
 
